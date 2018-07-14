@@ -85,16 +85,16 @@ function promptUserPurchase() {
                     connection.query(updateQueryStr, function (err, data) {
                         if (err) throw err;
 
-                        console.log('Your oder has been placed! Your total is $' + productData.price * quantity);
-                        console.log('Thank you for shopping with us!');
+                        console.log('Oder has been placed! Your total is $' + productData.price * quantity);
+
                         console.log("\n---------------------------------------------------------------------\n");
 
                         // End the database connection
                         connection.end();
                     })
                 } else {
-                    console.log('Sorry, there is not enough product in stock, your order can not be placed as is.');
-                    console.log('Please modify your order.');
+                    console.log('Boo, there is not enough product in stock.');
+                    console.log('Please try again.');
                     console.log("\n---------------------------------------------------------------------\n");
 
                     displayInventory();
